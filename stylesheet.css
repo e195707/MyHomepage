@@ -1,5 +1,7 @@
+body{
+    max-width: 1300px;
+}
 *{
-
 box-sizing: border-box;
 }
 
@@ -25,24 +27,97 @@ header {
 
 
 .detail  li{
-    padding: 50px 20px 20px 20px;
+    margin: 50px 20px 20px 20px;
     font-size: 20px;
 }
 
-.sns{
-    font-size: 45px;
-    float:right;
-    margin: 30px;
+.detail  li a{
+    text-decoration: none;
+    color: black;
 }
 
-.sns  a{
-    padding:20px;
-    color: inherit;
+.detail  li a:hover{
+    color: blue;
+    cursor: pointer;
 }
 
-.twi{
-    color:blue;
+
+.sns {
+    margin-top: 35px;
+    float: right;
+  }
+
+
+.sns-icon{
+    margin: .3em;
+    display: block;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    position: relative;
+    z-index: 1;  
+    font-size: 1.6rem;
+    background-color:rgba(142, 142, 142, 0.739);
+    transition: transform ease-out 0.2s;
 }
+
+.sns li{
+    display: inline-block;
+}
+
+
+.insta::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    z-index: -1;
+    transform: scale(0.9);
+}
+  
+
+.fa.fa-instagram {
+    display: inline-block;
+    color: #fff;
+ }
+.insta:hover {
+    background: radial-gradient(
+        circle farthest-corner at 32% 106%,
+        rgb(255, 225, 125) 0%,
+        rgb(255, 205, 105) 10%,
+        rgb(250, 145, 55) 28%,
+        rgb(235, 65, 65) 42%,
+        transparent 82%
+      ),
+      linear-gradient(135deg, rgb(35, 75, 215) 12%, rgb(195, 60, 190) 58%);
+    transform: scale(0.9);
+}
+
+.twi::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    z-index: -1;
+    transform: scale(0.9);
+}
+.fa.fa-twitter {
+    display: inline-block;
+    color: #fff;
+}
+.twi:hover {
+    background: #00b0ed;
+    transform: scale(0.9);
+}
+
 
 .myimage{
     width: 50%;
@@ -74,11 +149,16 @@ header {
     margin-left: 30px;
 }
 
+
 .text-style{
-    margin-left: 40px;
+margin-left: 30px;
 }
 
-.about h2, .pr h2{
+.text-style2 ::first-line{
+    text-align: center;
+}
+
+.about h2, .pr h2, .sub-produce h2{
     position: relative;
     color: #333333;
     font-size: 25px;
@@ -171,4 +251,111 @@ footer h2{
     padding-left: 20px;
 }
 
+.sub-produce{
+    display: none;
+}
 
+.menu-icon{
+    display: none;
+}
+
+.menu{
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    right: 0;
+    height: 300px;
+    width: 50%;
+    background-color:rgba(196, 170, 1,0.8);
+    display: none;
+}
+
+.menu-detail li{
+    margin: 0 auto;
+    text-align: center;
+    width: 80%;
+    font-size: 30px;
+    padding-top:20px;
+}
+
+.menu-detail  li a{
+    text-decoration: none;
+    color: black;
+}
+
+.menu-sns ul{
+    display: inline-block;
+}
+
+.menu-sns{
+    display: inline-block;
+    text-align: center;
+    margin-top:100px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.menu-detail  li a:hover{
+    color: blue;
+    cursor: pointer;
+}
+
+
+.close{
+    float: right;
+    font-size: 30px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+
+@media(max-width: 900px){
+    .header-left{
+        width: 100%;
+    }
+}
+
+@media(max-width: 615px){
+    .header-left{
+        width: 50%;
+    }
+    .detail{
+        display: none;
+    }
+    .sns{
+        display: none;
+    }
+    .menu-icon{
+        display: block;
+        float: right;
+        font-size: 50px;
+        margin-top: 20px;
+        margin-right: 30px;
+        color: inherit;
+    }
+
+    .menu-icon:hover{
+        color: blue;
+    }
+
+    .myaddress{
+        flex-wrap: wrap;
+    }
+
+    .myaddress li{
+        flex: auto;
+        width: 100%;
+    }
+}
+
+@media(max-width: 560px){
+
+    .white-box {
+        display: none;
+    }
+
+    .sub-produce{
+        display: block;
+    }
+
+}
